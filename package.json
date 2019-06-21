@@ -1,0 +1,35 @@
+{
+  "name": "cashmos-php-api",
+  "version": "1.0.0",
+  "description": "PHP API for Cashmos Payment System",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brightantwiboasiako/cashmos-php-api.git"
+  },
+  "keywords": [
+    "Payments",
+    "Cashmos",
+    "API",
+    "Africa",
+    "Mobile",
+    "Money"
+  ],
+  "author": "Bright Antwi Boasiako <bright@omnile.com> (omnile.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brightantwiboasiako/cashmos-php-api/issues"
+  },
+  "homepage": "https://github.com/brightantwiboasiako/cashmos-php-api#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-phpunit": "^0.26.0",
+    "mocha": "^6.1.4",
+    "mocha-webpack": "^1.1.0"
+  }
+}

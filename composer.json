@@ -1,0 +1,34 @@
+{
+    "name": "cashmos/cashmos-php-api",
+    "description": "Online Payment Processor",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "illuminate/support": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2",
+        "mockery/mockery": "^0.9.9"
+    },
+    "autoload": {
+        "classmap": [
+
+        ],
+        "psr-4": {
+            "Cashmos\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bright Antwi Boasiako",
+            "email": "bright@cashmos.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
