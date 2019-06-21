@@ -21,15 +21,15 @@ API tab of your business screen of Cashmos online.
 Create a business at [Cashmos.com](https://cashmos.herokuapp.com) if
 you don't already have an account.
 
- ~~~~
- $cashmos = new Cashmos\Cashmos($clientId, $secret);
- ~~~~
+ ```php
+$cashmos = new Cashmos\Cashmos($clientId, $secret);
+```
  
 ### Order Processing
 Use the following steps to process an order with Cashmos:
 
-1. Create an order:
- ~~~~
+I. Create an order:
+ ~~~~php
    $order = new Cashmos\Services\Order\Order();
     
    // Add items to order
@@ -56,12 +56,12 @@ Use the following steps to process an order with Cashmos:
    $order->cancelUrl(https://business.com/canceled); // Url when payment authorization was canceled.
   ~~~~
 
-2. Process Order Authorization:
+II. Process Order Authorization:
    
    This step allows the user to choose their payment method and provide
    authorization for the purchase. However, the user's is NOT actually charged.
    Use the next step to confirm the order and actually charge the user. 
- ~~~~
+ ~~~~php
     $cashmos = new Cashmos\Cashmos($clientId, $secret);
     $cashmos->process($order);
  ~~~~   
@@ -69,8 +69,8 @@ Use the following steps to process an order with Cashmos:
  If the user authorizes the payment, Cashmos will return to the "returnUrl" provided
  with a payment token as a query parameter (?token="random-token"). This payment token is used to confirm the payment.
 
-3. Confirm Order
-   ~~~~
+III. Confirm Order:
+   ```php
     $confirmation = new Cashmos\Services\Order\OrderConfirmation($token);
     $cashmos = new Cashmos\Cashmos($clientId, $secret);
     
@@ -80,7 +80,7 @@ Use the following steps to process an order with Cashmos:
         // There was an error with order confirmation
         echo $cashmos->getError();
     }
-   ~~~~
+   ```
 
 ### Prerequisites
 * PHP 5.3 or above
