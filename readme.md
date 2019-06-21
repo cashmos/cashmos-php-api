@@ -52,8 +52,8 @@ I. Create an order:
    
    // Set return and cancel urls
    
-   $order->returnUrl(https://business.com/paid); // Url when payment authorization was successful.
-   $order->cancelUrl(https://business.com/canceled); // Url when payment authorization was canceled.
+   $order->returnUrl('https://business.com/paid'); // Url when payment authorization was successful.
+   $order->cancelUrl('https://business.com/canceled'); // Url when payment authorization was canceled.
   ~~~~
 
 II. Process Order Authorization:
