@@ -7,7 +7,7 @@ To install, run the following command on your terminal or command
 prompt on Windows
 (make sure composer is installed and available in your project directory).
 
- ~~~~
+ ~~~~php
  composer require cashmos/cashmos-php-api
  ~~~~
 
