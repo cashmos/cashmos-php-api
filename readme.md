@@ -51,7 +51,7 @@ I. Create an order:
    
    // You can add any custom data to the order which 
    // could be retrieved later after confirmation.
-   // This could be information used to identify the customer
+   // This may be information used to identify the customer
    // making the order, etc.
    $customData = [
      'foo' => 'bar'
