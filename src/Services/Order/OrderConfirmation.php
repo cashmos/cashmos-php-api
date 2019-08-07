@@ -28,6 +28,13 @@ class OrderConfirmation implements Processable
     protected $token;
 
     /**
+     * The order processor
+     *
+     * @var OrderProcessor
+     */
+    private $processor;
+
+    /**
      * OrderConfirmation constructor.
      * @param $token
      */
@@ -41,8 +48,20 @@ class OrderConfirmation implements Processable
      */
     public function process(HttpClientInterface $client)
     {
-        return (new OrderProcessor($client))->confirmOrder($this->token);
+        $this->processor = new OrderProcessor($client);
+        return $this->processor->confirmOrder($this->token);
     }
 
+    /**
+     * Gets custom data associated with the order
+     *
+     * @return array
+     */
+    public function getCustomData(){
+        if(!$this->processor) // Confirmation has not been processed yet.
+            throw new ProcessException('You need to confirm the payment first.');
+
+        return $this->processor->getCustomData($this->token);
+    }
 
 }

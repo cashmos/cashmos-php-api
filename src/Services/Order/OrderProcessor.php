@@ -52,4 +52,20 @@ class OrderProcessor extends Processor
         }
     }
 
+
+    /**
+     * Gets custom data associated with an order
+     *
+     * @param string $token
+     * @return void
+     */
+    public function getCustomData($token){
+        try{
+
+            return $this->httpClient->get('orders/', $token . '/custom-data');
+        }catch(\Exception $e){
+            throw new ProcessException($e->getMessage());
+        }
+    }
+
 }

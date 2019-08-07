@@ -49,6 +49,14 @@ I. Create an order:
    
    $order->setOrderTotal($orderTotal)
    
+   // You can add any custom data to the order which 
+   // could be retrieved later after confirmation.
+   // This could be information used to identify the customer
+   // making the order, etc.
+   $customData = [
+     'foo' => 'bar'
+   ];
+   $order->addCustomData($customData);
    
    // Set return and cancel urls
    
@@ -76,6 +84,8 @@ III. Confirm Order:
     
     if($cashmos->process($confirmation)){
         // Order confirmed successfully.
+        // You can get any custom data after the order is confirmed.
+        $customData = $confirmation->getCustomData();
     }else{
         // There was an error with order confirmation
         echo $cashmos->getError();
