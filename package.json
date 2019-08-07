@@ -29,7 +29,10 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-phpunit": "^0.26.0",
-    "mocha": "^6.1.4",
+    "hoek": ">=4.2.1",
+    "lodash": ">=4.17.13",
+    "lodash.template": ">=4.5.0",
+    "mocha": "^6.2.0",
     "mocha-webpack": "^1.1.0"
   }
 }
